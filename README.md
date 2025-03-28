@@ -1,5 +1,6 @@
 # Proyecto_Final
 # Pagina Web
-##Subtitulo
+## Funcionalidades
+## Tecnologias
 -lista 1
 lol
