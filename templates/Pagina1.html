@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paginas Relacionadas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styless.css') }}">
+</head>
+<body>
+    <header>
+        <h1 class="Titulo">Paginas Relacionadas</h1>
+        <br>
+        <u><i>
+            <h2 class="Pagina_Main"><a href="/">Inicio</a></h2>
+            <h2 class="Pagina1"><a href="/Pagina1">Paginas relacionadas</a></h2>
+            <h2 class="Pagina2"><a href="/Pagina2">Fotos del tema</a></h2>
+            <h2 class="Pagina3"><a href="/Pagina3">Fuentes</a></h2>
+        </i></u>
+        <br>
+        <br>
+    </header>
+    <div class="Info_Intro">
+        <h2>Resumen</h2>
+        <p>
+            A continuación, en la siguiente tabla se muestran algunas páginas relacionadas con el tema de la página principal. 
+            Estas páginas pueden contener información adicional, recursos o enlaces útiles que complementan 
+            el contenido principal. Puedes hacer clic en los enlaces para explorar más sobre cada tema.
+        </p>
+        <p>
+            De igual forma en la misma tabla encontraras los titulos y temas correspondientes a cada pagina web,
+            para dar a conocer su contenido y facilitar la navegación y busqueda de alguna informacion especifica.
+        </p>
+    </div>
+    <table class="Tabla">
+    <tr>
+        <th>Nombre de la Pagina</th>
+        <th>Titulo</th>
+        <th>Subtitulos</th>
+        <th>Enlace</th>
+    </tr>
+    {% for pagina in resultados %}
+    <tr>
+        <td>{{ pagina.nombre }}</td>
+        <td>{{ pagina.titulo }}</td>
+        <td>
+            <ul>
+                {% for subtitulo in pagina.Subtitulos %}
+                    <li>{{ subtitulo }}</li>
+                {% endfor %}
+            </ul>
+        </td>
+        <td><a href="{{ pagina.enlace }}" target="_blank">Visitar</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotos del tema</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styless.css') }}">
+</head>
+<body>
+    <header>
+        <h1 class="Titulo">Fotos del tema</h1>
+        <br>
+        <u><i>
+            <h2 class="Pagina_Main"><a href="/">Inicio</a></h2>
+            <h2 class="Pagina1"><a href="/Pagina1">Paginas relacionadas</a></h2>
+            <h2 class="Pagina2"><a href="/Pagina2">Fotos del tema</a></h2>
+            <h2 class="Pagina3"><a href="/Pagina3">Fuentes</a></h2>
+        </i></u>
+        <br>
+        <br>
+    </header>
+     {% if session.user %}
+    <p style="text-align:right; padding-right: 40px;">
+        Usuario: <strong>{{ session.user }}</strong> | <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+    </p>
+
+    <div class="formulario-subida">
+        <form method="POST" enctype="multipart/form-data">
+            <label>Selecciona una imagen:</label><br>
+            <input type="file" name="file" accept="image/*" required><br><br>
+            
+            <label>Comentario (máx. 200 caracteres):</label><br>
+            <input type="text" name="comment" maxlength="200" placeholder="Escribe un comentario..." required><br><br>
+            
+            <button type="submit">Subir imagen</button>
+        </form>
+    </div>
+    {% else %}
+    <div class="acceso-denegado">
+        <p>Debes <a href="{{ url_for('login') }}">iniciar sesión</a> para subir imágenes.</p>
+    </div>
+    {% endif %}
+
+    <hr>
+
+    <div class="galeria">
+        {% for img in images %}
+        <div class="tarjeta-img">
+            <div class="img-info">
+                <p><strong>{{ img.user }}</strong></p>
+                <p class="comentario">{{ img.comment }}</p>
+            </div>
+            <img src="{{ url_for('static', filename='uploads/' ~ img.filename) }}" alt="Imagen subida">
+            <div class="fecha-subida">
+                Subido el: {{ img.date }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+</body>
+</html>
