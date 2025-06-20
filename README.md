@@ -14,12 +14,12 @@ En esta se desarrolla la informacion descrita en el resumen de la pagina princip
 ### Paginas relacionadas (P2)
 Dentro de esta pagina se encontraran mas paginas web para obtener diferente informacion, en ella las palabras clave y el link de la pagina seleccionada seran expuestos para que el usuario tenga una idea general del objetivo de dichas paginas afiliadas.
 ### Fotos del tema (P3)
-Esta opcion si bien todos podran ver las fotos subidas, la opcion para subir/compartir fotos sera solo para usuarios registrados. Las fotos seran referentes a como afecta el cambio climatico por todo el mundo y para subir una foto se debera poner una breve descripcion de la imagen, ubicacion de donde fue tomada. Ademas se pondra el usertag de quien haya subido dicha imagen, todo con el objetivo de hacer participes y conscientes de los efectos a nivel global.
+Esta opcion si bien todos podran ver las fotos subidas, la opcion para subir/compartir fotos sera solo para usuarios registrados. Las fotos seran referentes a como afecta el cambio climatico por todo el mundo y para subir una foto se debera poner una breve descripcion de la imagen. Ademas se pondra el usertag de quien haya subido dicha imagen, todo con el objetivo de hacer participes y conscientes de los efectos a nivel global.
 !!LAS FOTOS SERAN FILTRADAS PARA EVITAR MAL USO DE LA PAGINA¡¡
 ### Blibliografias (P4)
 En esta se pondran todos los links de las paginas relacionadas o de donde se obtuvo la informacion, ademas de colocar nuevamente el contacto del creador de la pagina.
-## Funcionalidades
-Dentro de las funcionalidades se encuentra la funcion u objetivo especifico de cada pagina web.
 
 ## Tecnologias usadas
-- lista 1
+Dentro de los recursos utilizadospara la creacion de esta pagina web se encuentram las librerias :
+Flask, render_template, request, redirect, url_for, session, flash, os, secure_filename, datetime, BeautifulSoup.}
+Ademas de archivos .html para dar forma a la pagina y el servidor proporcionado por un archivo .py (Python).
